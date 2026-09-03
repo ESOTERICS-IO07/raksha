@@ -1,5 +1,5 @@
 export type RiskLevel = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
-export type FrictionAction = "ALLOW" | "VERIFY" | "WARN" | "HOLD";
+export type FrictionAction = "ALLOW" | "VERIFY" | "STRONG_VERIFY" | "HOLD";
 export interface RiskResult { risk_score:number; risk_level:RiskLevel; signals:string[]; action:FrictionAction; message:string; }
 export interface TransactionRequest { customer_id:string; recipient_id:string; amount:number; reason:string; description:string; }
 export interface SignalResult { score: number; signals: string[] }

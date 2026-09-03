@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Accessibility, Bell, ChevronRight, LayoutDashboard, Menu, Network, Send, Shield, ShieldAlert, TableProperties, UserRound, X } from "lucide-react";
 import { ReactNode, useState } from "react";
-const groups=[{label:"CUSTOMER",items:[["Dashboard","/customer",LayoutDashboard],["Send Money","/customer/send-money",Send],["Transactions","/customer/transactions",TableProperties],["Safety Center","/customer/safety",Shield]]},{label:"INVESTIGATION",items:[["Bank Dashboard","/bank",LayoutDashboard],["Fraud Graph","/bank/fraud-graph",Network]]},{label:"DEMO",items:[["Scenarios","/demo",ShieldAlert]]}];
+const groups: {label: string, items: [string, string, React.ElementType][]}[] = [{label:"CUSTOMER",items:[["Dashboard","/customer",LayoutDashboard],["Send Money","/customer/send-money",Send],["Transactions","/customer/transactions",TableProperties],["Safety Center","/customer/safety",Shield]]},{label:"INVESTIGATION",items:[["Bank Dashboard","/bank",LayoutDashboard],["Fraud Graph","/bank/fraud-graph",Network]]},{label:"DEMO",items:[["Scenarios","/demo",ShieldAlert]]}];
 export default function AppShell({title,description,children}:{title:string;description:string;children:ReactNode}) {
   const path=usePathname(); const [open,setOpen]=useState(false); const [large,setLarge]=useState(false); const [panel,setPanel]=useState<"demo"|"notifications"|"profile"|null>(null);
   const toggle=(next:"demo"|"notifications"|"profile")=>setPanel(panel===next?null:next);
