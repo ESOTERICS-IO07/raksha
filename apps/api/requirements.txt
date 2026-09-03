@@ -8,3 +8,4 @@ alembic
 redis
 python-dotenv
 openai
+networkx
