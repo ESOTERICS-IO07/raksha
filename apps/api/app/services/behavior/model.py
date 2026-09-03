@@ -96,4 +96,3 @@ class BehaviorAnomalyModel:
         if cls._instance is None:
             cls._instance = cls(random_state=42)
         return cls._instance
-

@@ -190,4 +190,3 @@ class BehaviorFeatureExtractor:
             ],
             dtype=np.float64,
         ).reshape(1, -1)
-

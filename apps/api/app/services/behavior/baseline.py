@@ -181,4 +181,3 @@ class BehaviorBaselineCalculator:
             recent_transaction_count_24h=0,
             historical_transactions=None,
         )
-
