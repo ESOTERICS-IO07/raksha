@@ -1,9 +1,9 @@
-from recipient_engine import (
+from app.services.recipient.recipient_engine import (
     calculate_recipient_score,
     analyze_recipient_from_data,
 )
 
-from sample_data import RECIPIENTS, TRANSACTIONS
+from tests.sample_data import RECIPIENTS, TRANSACTIONS
 
 
 def test_score_range():

@@ -1,6 +1,6 @@
 from typing import Any
 
-from fraud_graph import build_fraud_graph, analyze_recipient_network
+from app.graph.fraud_graph import build_fraud_graph, analyze_recipient_network
 
 
 def calculate_recipient_score(
