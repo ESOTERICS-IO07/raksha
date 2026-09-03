@@ -9,3 +9,6 @@ redis
 python-dotenv
 openai
 networkx
+
+numpy
+scikit-learn
