@@ -1,158 +1,53 @@
 # ============================================================
-
 # RAKSHA — Git Ignore
-
 # ============================================================
 
 # -------------------------
-
 # Environment / Secrets
-
 # -------------------------
-
 .env
-.env.*
-!.env.example
-*.env.local
-*.env.production
-*.pem
-*.key
+.env.local
+.env.*.local
 
 # -------------------------
-
 # Node / Next.js
-
 # -------------------------
-
 node_modules/
 .next/
 out/
-dist/
-build/
-coverage/
-.turbo/
-.vercel/
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+*.tsbuildinfo
 
 # -------------------------
-
 # Python
-
 # -------------------------
-
-**pycache**/
+__pycache__/
 *.py[cod]
-*$py.class
-
+*.pyo
+*.pyd
 .venv/
 venv/
-env/
 ENV/
-
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
-
-*.egg-info/
-.eggs/
-*.whl
+env/
 
 # -------------------------
-
-# IDE / Editors
-
+# Local databases
 # -------------------------
-
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-
-.idea/
-*.iml
-
-# -------------------------
-
-# OS
-
-# -------------------------
-
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# -------------------------
-
-# Logs
-
-# -------------------------
-
-*.log
-logs/
-
-# -------------------------
-
-# Temporary files
-
-# -------------------------
-
-*.tmp
-*.temp
-*.swp
-*.swo
-
-# -------------------------
-
-# Database / local state
-
-# -------------------------
-
+*.db
 *.sqlite
 *.sqlite3
 
 # -------------------------
-
-# Generated data
-
+# Build / Coverage
 # -------------------------
-
-data/generated/*
-
-# Keep directory
-
-!data/generated/.gitkeep
-
-# -------------------------
-
-# Docker
-
-# -------------------------
-
-docker-compose.override.yml
-
-# -------------------------
-
-# Test artifacts
-
-# -------------------------
-
-playwright-report/
-test-results/
+coverage/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # -------------------------
-
-# Secrets / certificates
-
+# IDE / OS
 # -------------------------
-
-secrets/
-certs/
-*.crt
-*.p12
-*.pfx
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

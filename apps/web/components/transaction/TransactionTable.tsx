@@ -1,0 +1,4 @@
+"use client";
+import { Transaction } from "@/types";
+import { RiskBadge } from "@/components/risk/RiskPieces";
+export default function TransactionTable({transactions,onSelect}:{transactions:Transaction[];onSelect?:(tx:Transaction)=>void}){return <div className="table-wrap"><table className="table"><thead><tr><th>Transaction ID</th><th>Recipient</th><th>Amount</th><th>Date</th><th>Risk</th><th>Action</th><th>Status</th></tr></thead><tbody>{transactions.map(tx=><tr key={tx.transaction_id} onClick={()=>onSelect?.(tx)} style={{cursor:onSelect?"pointer":"default"}}><td>{tx.transaction_id}</td><td>{tx.recipient_name}</td><td>₹{tx.amount.toLocaleString("en-IN")}</td><td>{tx.timestamp}</td><td><RiskBadge level={tx.risk.level}/></td><td>{tx.friction.action}</td><td><span className="status low">{tx.status}</span></td></tr>)}</tbody></table></div>}
