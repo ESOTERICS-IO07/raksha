@@ -1,0 +1,158 @@
+# ============================================================
+
+# RAKSHA — Git Ignore
+
+# ============================================================
+
+# -------------------------
+
+# Environment / Secrets
+
+# -------------------------
+
+.env
+.env.*
+!.env.example
+*.env.local
+*.env.production
+*.pem
+*.key
+
+# -------------------------
+
+# Node / Next.js
+
+# -------------------------
+
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+.vercel/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -------------------------
+
+# Python
+
+# -------------------------
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+*.egg-info/
+.eggs/
+*.whl
+
+# -------------------------
+
+# IDE / Editors
+
+# -------------------------
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+*.iml
+
+# -------------------------
+
+# OS
+
+# -------------------------
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+
+# Logs
+
+# -------------------------
+
+*.log
+logs/
+
+# -------------------------
+
+# Temporary files
+
+# -------------------------
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# -------------------------
+
+# Database / local state
+
+# -------------------------
+
+*.sqlite
+*.sqlite3
+
+# -------------------------
+
+# Generated data
+
+# -------------------------
+
+data/generated/*
+
+# Keep directory
+
+!data/generated/.gitkeep
+
+# -------------------------
+
+# Docker
+
+# -------------------------
+
+docker-compose.override.yml
+
+# -------------------------
+
+# Test artifacts
+
+# -------------------------
+
+playwright-report/
+test-results/
+.pytest_cache/
+
+# -------------------------
+
+# Secrets / certificates
+
+# -------------------------
+
+secrets/
+certs/
+*.crt
+*.p12
+*.pfx
