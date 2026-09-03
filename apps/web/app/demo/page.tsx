@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import AppShell from "@/components/layout/AppShell";
@@ -6,5 +6,3 @@ import { getScenarios, runScenario } from "@/lib/api/scenarios";
 import { TransactionAnalysisResponse } from "@/types";
 import { FrictionCard, IntelligenceCard, InterventionPanel, RiskCard } from "@/components/risk/RiskPieces";
 export default function Demo(){const scenarios=useQuery({queryKey:["scenarios"],queryFn:getScenarios});const [analysis,setAnalysis]=useState<TransactionAnalysisResponse>();async function run(id:string){setAnalysis(await runScenario(id))}return <AppShell title="Demo Scenarios" description="Run deterministic synthetic payment safety scenarios.">{!analysis?<section className="grid scenario-grid">{scenarios.isLoading?<p className="muted">Loading scenariosâ€¦</p>:scenarios.data?.map(s=><article className={`card scenario ${s.id==='social'?'critical':''}`} key={s.id}><div className="eyebrow">{s.name}</div><h2 style={{marginTop:8}}>{s.title}</h2><strong style={{fontSize:27,marginTop:14}}>{s.amount?`₹${s.amount.toLocaleString('en-IN')}`:'Network view'}</strong><p className="muted">{s.description}</p><span className="risk-badge high" style={{alignSelf:'start'}}>{s.expected}</span><button className="btn" onClick={()=>run(s.id)}>Run Scenario</button></article>)}</section> :<section><div className="card hero"><div className="eyebrow">Demo analysis</div><h2>{analysis.recipient_name} Â· ₹{analysis.amount.toLocaleString('en-IN')}</h2><p className="muted">{analysis.reason}</p></div><div className="grid analysis-grid section"><div className="grid"><IntelligenceCard title="Behavior" question="Is this normal for you?" data={analysis.behavior}/><IntelligenceCard title="Recipient" question="Who are you paying?" data={analysis.recipient}/><IntelligenceCard title="Intent" question="Why are you paying?" data={analysis.intent}/></div><div className="grid"><RiskCard risk={analysis.risk}/><FrictionCard data={analysis.friction}/></div></div><section className="section"><InterventionPanel analysis={analysis} onDone={()=>setAnalysis(undefined)}/></section></section>}</AppShell>}
-
-
