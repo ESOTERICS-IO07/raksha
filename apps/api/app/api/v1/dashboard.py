@@ -47,8 +47,11 @@ def dashboard_transactions(
     db: Session = Depends(get_db),
 ) -> list[dict[str, Any]]:
     """Return recent transactions for the dashboard."""
+    from app.models.domain import RiskAssessment
+
     rows = (
         db.query(Transaction)
+        .outerjoin(RiskAssessment)
         .order_by(Transaction.created_at.desc())
         .limit(limit)
         .all()
@@ -59,7 +62,7 @@ def dashboard_transactions(
             "status": r.status.value,
             "amount": float(r.amount),
             "currency": r.currency,
-            "risk_score": None,  # Populated after P4 Risk Engine is integrated
+            "risk_score": r.risk_assessment.score if r.risk_assessment else None,
         }
         for r in rows
     ]

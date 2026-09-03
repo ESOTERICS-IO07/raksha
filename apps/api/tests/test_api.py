@@ -162,6 +162,117 @@ def test_transaction_analyze_valid(client, db_session):
     assert "intent" in body
     assert "risk" in body
     assert "friction" in body
+    
+    # Verify canonical schema output structure
+    assert "category" in body["intent"]
+    assert "score" in body["risk"]
+    assert "action" in body["friction"]
+
+    # Verify Database Persistence
+    from app.models.domain import Transaction, IntentResult, RiskAssessment, FrictionDecision
+    tx_id_str = body["transaction_id"]
+    tx_id = int(tx_id_str.replace("TX", ""))
+    
+    db_tx = db_session.query(Transaction).filter(Transaction.id == tx_id).first()
+    assert db_tx is not None
+    
+    assert db_tx.intent_result is not None
+    assert db_tx.intent_result.category == body["intent"]["category"]
+    assert db_tx.intent_result.score == body["intent"]["score"]
+    assert db_tx.intent_result.signals == body["intent"]["signals"]
+    assert db_tx.intent_result.attributes == body["intent"]["attributes"]
+    assert db_tx.intent_result.provider == body["intent"]["provider"]
+    assert db_tx.intent_result.model_version == body["intent"]["model_version"]
+    
+    assert db_tx.risk_assessment is not None
+    assert db_tx.risk_assessment.score == body["risk"]["score"]
+    assert db_tx.risk_assessment.level == body["risk"]["level"]
+    assert db_tx.risk_assessment.signals == body["risk"]["signals"]
+    assert db_tx.risk_assessment.action_recommendation == body["risk"]["action_recommendation"]
+    assert db_tx.risk_assessment.engine_version == body["risk"]["engine_version"]
+    
+    assert db_tx.friction_decision is not None
+    assert db_tx.friction_decision.action == body["friction"]["action"]
+    assert db_tx.friction_decision.title == body["friction"]["title"]
+    assert db_tx.friction_decision.message == body["friction"]["message"]
+
+    status_map = {
+        "ALLOW": "ALLOWED",
+        "VERIFY": "PENDING",
+        "STRONG_VERIFY": "PENDING",
+        "HOLD": "HELD"
+    }
+    assert db_tx.status.value == status_map[db_tx.friction_decision.action]
+
+def test_transaction_analyze_hold_scenario(client, db_session, monkeypatch):
+    user, recipient, _ = _seed(db_session)
+    
+    # Mock recipient adapter to return score >= 60 to trigger the high-confidence rule
+    def mock_run_recipient_analysis(recipient_id, db):
+        return {
+            "score": 65,
+            "signals": ["SUSPICIOUS_HISTORY"],
+            "recipient_profile": {},
+            "network": {},
+            "model_version": "recipient-v1"
+        }
+    monkeypatch.setattr("app.api.v1.transactions.run_recipient_analysis", mock_run_recipient_analysis)
+
+    # Bank impersonation with high amount should trigger CRITICAL -> HOLD -> HELD
+    resp = client.post(
+        "/api/v1/transactions/analyze",
+        json={
+            "user_id": str(user.id),
+            "recipient_id": str(recipient.id),
+            "amount": 50000,
+            "currency": "INR",
+            "reason": "Bank officer told me to verify my account",
+        },
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["risk"]["level"] == "CRITICAL"
+    assert body["friction"]["action"] == "HOLD"
+    
+    from app.models.domain import Transaction, TransactionStatus
+    tx_id = int(body["transaction_id"].replace("TX", ""))
+    db_tx = db_session.query(Transaction).filter(Transaction.id == tx_id).first()
+    assert db_tx.status == TransactionStatus.HELD
+
+def test_transaction_analyze_allow_scenario(client, db_session):
+    user, recipient, _ = _seed(db_session)
+    # Normal transaction should trigger LOW -> ALLOW -> ALLOWED
+    resp = client.post(
+        "/api/v1/transactions/analyze",
+        json={
+            "user_id": str(user.id),
+            "recipient_id": str(recipient.id),
+            "amount": 100,
+            "currency": "INR",
+            "reason": "Gift for a friend",
+        },
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["risk"]["level"] == "LOW"
+    assert body["friction"]["action"] == "ALLOW"
+    
+    from app.models.domain import Transaction, TransactionStatus
+    tx_id = int(body["transaction_id"].replace("TX", ""))
+    db_tx = db_session.query(Transaction).filter(Transaction.id == tx_id).first()
+    assert db_tx.status == TransactionStatus.ALLOWED
+
+def test_llm_fallback_behavior(client, db_session, monkeypatch):
+    from app.services.intent.providers import LLMProvider
+    # Ensure OPENAI_API_KEY is not set
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    
+    provider = LLMProvider()
+    assert provider.client is None
+    
+    result = provider.classify("one time password")
+    assert result.category.value == "OTP_SCAM"
+    assert result.provider == "mock"
 
 
 # ── 3. Users ──────────────────────────────────────────────────────────────────
@@ -260,6 +371,50 @@ def test_dashboard_transactions(client, db_session):
     assert resp.status_code == 200
     assert isinstance(resp.json(), list)
 
+def test_dashboard_transactions_with_risk_score(client, db_session):
+    from app.models.domain import Transaction, TransactionStatus, RiskAssessment
+    user, recipient, _ = _seed(db_session)
+    
+    tx = Transaction(
+        user_id=user.id,
+        recipient_id=recipient.id,
+        amount=1000,
+        currency="INR",
+        status=TransactionStatus.PENDING
+    )
+    tx.risk_assessment = RiskAssessment(
+        score=75,
+        level="HIGH",
+        signals=[],
+        action_recommendation="STRONG_VERIFY",
+        engine_version="test-v1"
+    )
+    db_session.add(tx)
+    db_session.commit()
+    
+    resp = client.get("/api/v1/dashboard/transactions")
+    assert resp.status_code == 200
+    transactions = resp.json()
+    assert any(t["transaction_id"] == tx.id and t["risk_score"] == 75 for t in transactions)
+
+def test_dashboard_transactions_without_risk_score(client, db_session):
+    from app.models.domain import Transaction, TransactionStatus
+    user, recipient, _ = _seed(db_session)
+    
+    tx = Transaction(
+        user_id=user.id,
+        recipient_id=recipient.id,
+        amount=2000,
+        currency="INR",
+        status=TransactionStatus.PENDING
+    )
+    db_session.add(tx)
+    db_session.commit()
+    
+    resp = client.get("/api/v1/dashboard/transactions")
+    assert resp.status_code == 200
+    transactions = resp.json()
+    assert any(t["transaction_id"] == tx.id and t["risk_score"] is None for t in transactions)
 
 def test_dashboard_clusters(client, db_session):
     resp = client.get("/api/v1/dashboard/clusters")

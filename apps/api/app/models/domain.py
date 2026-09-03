@@ -85,6 +85,13 @@ class IntentResult(Base):
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     transaction_id: Mapped[int] = mapped_column(ForeignKey("transactions.id"), unique=True)
     
+    category: Mapped[str] = mapped_column(String(255), nullable=False)
+    score: Mapped[int] = mapped_column(Integer, nullable=False)
+    signals: Mapped[list] = mapped_column(JSON, nullable=False)
+    attributes: Mapped[dict] = mapped_column(JSON, nullable=False)
+    provider: Mapped[str] = mapped_column(String(255), nullable=False)
+    model_version: Mapped[str] = mapped_column(String(255), nullable=False)
+    
     transaction: Mapped["Transaction"] = relationship("Transaction", back_populates="intent_result")
 
 class RiskAssessment(Base):
@@ -93,6 +100,12 @@ class RiskAssessment(Base):
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     transaction_id: Mapped[int] = mapped_column(ForeignKey("transactions.id"), unique=True)
     
+    score: Mapped[int] = mapped_column(Integer, nullable=False)
+    level: Mapped[str] = mapped_column(String(50), nullable=False)
+    signals: Mapped[list] = mapped_column(JSON, nullable=False)
+    action_recommendation: Mapped[str] = mapped_column(String(50), nullable=False)
+    engine_version: Mapped[str] = mapped_column(String(255), nullable=False)
+    
     transaction: Mapped["Transaction"] = relationship("Transaction", back_populates="risk_assessment")
 
 class FrictionDecision(Base):
@@ -100,6 +113,10 @@ class FrictionDecision(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     transaction_id: Mapped[int] = mapped_column(ForeignKey("transactions.id"), unique=True)
+    
+    action: Mapped[str] = mapped_column(String(50), nullable=False)
+    title: Mapped[str] = mapped_column(String(255), nullable=False)
+    message: Mapped[str] = mapped_column(Text, nullable=False)
     
     transaction: Mapped["Transaction"] = relationship("Transaction", back_populates="friction_decision")
 

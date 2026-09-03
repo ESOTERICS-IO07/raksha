@@ -28,8 +28,28 @@ from app.schemas.transaction import TransactionContext
 from app.schemas.errors import ErrorDetail, ErrorResponse
 from app.services.behavior.adapter import run_behavior_analysis
 from app.services.recipient.adapter import run_recipient_analysis
-from app.services.mocks import MockIntentProvider, MockRiskService, MockFrictionService
-from app.models.domain import Transaction, TransactionStatus, User, Recipient
+
+# Import actual P4 services
+from app.services.intent.providers import LLMProvider
+from app.services.intent.service import IntentService
+from app.services.risk.service import RiskService
+from app.services.friction.service import FrictionService
+
+# Import canonical schemas for validation
+from app.schemas.intent import IntentResult as CanonicalIntentResult
+from app.schemas.risk import RiskAssessment as CanonicalRiskAssessment
+from app.schemas.friction import FrictionDecision as CanonicalFrictionDecision
+
+# Import domain models for DB persistence
+from app.models.domain import (
+    Transaction,
+    TransactionStatus,
+    User,
+    Recipient,
+    IntentResult as DBIntentResult,
+    RiskAssessment as DBRiskAssessment,
+    FrictionDecision as DBFrictionDecision,
+)
 
 router = APIRouter(prefix="/transactions", tags=["transactions"])
 
@@ -42,8 +62,8 @@ def analyze_transaction(
     """Analyze a transaction through the full RAKSHA intelligence pipeline.
 
     Validates the transaction context, runs available engines (P2 Behavior,
-    P3 Recipient), delegates to P4 mocks for Intent/Risk/Friction, and
-    persists the transaction record.
+    P3 Recipient, P4 Intent, P4 Risk, P4 Friction), validates against 
+    canonical schemas, and persists the transaction record and outputs.
     """
     # Validate that user and recipient exist
     try:
@@ -87,22 +107,54 @@ def analyze_transaction(
             ).model_dump(),
         )
 
-    # Run intelligence pipeline
+    # 1. Run P2 Behavior and P3 Recipient (Existing)
     behavior_result = run_behavior_analysis(payload, db)
     recipient_result = run_recipient_analysis(payload.recipient_id, db)
-    intent_result = MockIntentProvider(payload)
-    risk_result = MockRiskService(behavior_result, recipient_result, intent_result)
-    friction_result = MockFrictionService(risk_result)
 
-    # Persist transaction record (PENDING → status from friction action)
+    # 2. Run P4 Intent
+    intent_svc = IntentService(provider=LLMProvider())
+    p4_intent = intent_svc.analyze(payload.reason)
+    canonical_intent = CanonicalIntentResult(**p4_intent.model_dump())
+
+    # 3. Run P4 Risk
+    behavior_score = behavior_result.get("score", 0)
+    recipient_score = recipient_result.get("score", 0)
+    intent_score = canonical_intent.score
+    intent_category = canonical_intent.category.value
+    amount = float(payload.amount)
+    
+    combined_signals = (
+        behavior_result.get("signals", [])
+        + recipient_result.get("signals", [])
+        + canonical_intent.signals
+    )
+
+    risk_svc = RiskService()
+    p4_risk = risk_svc.calculate(
+        behavior_score=behavior_score,
+        recipient_score=recipient_score,
+        intent_score=intent_score,
+        intent_category=intent_category,
+        amount=amount,
+        signals=combined_signals,
+    )
+    canonical_risk = CanonicalRiskAssessment(**p4_risk.model_dump())
+
+    # 4. Run P4 Friction
+    friction_svc = FrictionService()
+    p4_friction = friction_svc.decide(canonical_risk.level.value)
+    canonical_friction = CanonicalFrictionDecision(**p4_friction.model_dump())
+
+    # 5. Map status
     status_map = {
         "ALLOW": TransactionStatus.ALLOWED,
         "VERIFY": TransactionStatus.PENDING,
         "STRONG_VERIFY": TransactionStatus.PENDING,
         "HOLD": TransactionStatus.HELD,
     }
-    tx_status = status_map.get(friction_result.get("action", "ALLOW"), TransactionStatus.PENDING)
+    tx_status = status_map.get(canonical_friction.action.value, TransactionStatus.PENDING)
 
+    # 6. Persist transaction and outputs
     db_tx = Transaction(
         user_id=user_id_int,
         recipient_id=recipient_id_int,
@@ -113,6 +165,29 @@ def analyze_transaction(
         reason=payload.reason,
         status=tx_status,
     )
+    
+    # Attach result models
+    db_tx.intent_result = DBIntentResult(
+        category=canonical_intent.category.value,
+        score=canonical_intent.score,
+        signals=canonical_intent.signals,
+        attributes=canonical_intent.attributes,
+        provider=canonical_intent.provider,
+        model_version=canonical_intent.model_version,
+    )
+    db_tx.risk_assessment = DBRiskAssessment(
+        score=canonical_risk.score,
+        level=canonical_risk.level.value,
+        signals=canonical_risk.signals,
+        action_recommendation=canonical_risk.action_recommendation.value,
+        engine_version=canonical_risk.engine_version,
+    )
+    db_tx.friction_decision = DBFrictionDecision(
+        action=canonical_friction.action.value,
+        title=canonical_friction.title,
+        message=canonical_friction.message,
+    )
+
     db.add(db_tx)
     db.commit()
     db.refresh(db_tx)
@@ -123,7 +198,7 @@ def analyze_transaction(
         "transaction_id": tx_id,
         "behavior": behavior_result,
         "recipient": recipient_result,
-        "intent": intent_result,
-        "risk": risk_result,
-        "friction": friction_result,
+        "intent": canonical_intent.model_dump(),
+        "risk": canonical_risk.model_dump(),
+        "friction": canonical_friction.model_dump(),
     }
