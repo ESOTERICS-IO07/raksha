@@ -44,6 +44,8 @@ def _build_transaction_dicts(
     return result
 
 
+from datetime import datetime, timezone
+
 def _build_recipient_data(db_recipient: Any) -> dict[str, Any]:
     """Build the recipient_data dict P3's engine expects from a DB Recipient row.
 
@@ -57,8 +59,16 @@ def _build_recipient_data(db_recipient: Any) -> dict[str, Any]:
     # Count unique senders from transactions
     sender_ids = {tx.user_id for tx in db_recipient.transactions} if db_recipient.transactions else set()
 
+    account_age_days = 0
+    if db_recipient.transactions:
+        oldest_tx = min(db_recipient.transactions, key=lambda t: t.timestamp)
+        # Ensure timestamp comparison works cleanly
+        now = datetime.now(timezone.utc)
+        delta = now - oldest_tx.timestamp
+        account_age_days = max(0, delta.days)
+
     return {
-        "account_age_days": 0,  # Will be populated from extended Recipient model
+        "account_age_days": account_age_days,
         "sender_count": len(sender_ids),
         "previous_flags": previous_flags,
     }
@@ -104,7 +114,11 @@ def run_recipient_analysis(
     flagged_tx_ids: set[int] = set()
     if all_tx_ids:
         flags = db.query(FraudFlag).filter(FraudFlag.recipient_id == r_id_int).all()
-        # For now, flag all transactions of a flagged recipient
+        # TODO(Integration): The FraudFlag model currently lacks transaction_level identification.
+        # As the smallest safe fallback, we flag all transactions for a flagged recipient.
+        # This accurately captures suspicious networks for deterministic fraud recipients
+        # but may broaden suspicion incorrectly for mixed-history recipients.
+        # Future schema update is required to map FraudFlag directly to Transaction.
         if flags:
             flagged_tx_ids = set(all_tx_ids)
 
