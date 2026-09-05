@@ -11,11 +11,11 @@ RAKSHA connects the customer experience with the bank investigation workflow.
 
 | Customer Safety | Bank Investigation |
 |---|---|
-| ![Send Money](docs/screenshots/Send Money.png) | ![Bank Dashboard](docs/screenshots/Bank Dashboard.png) |
+| ![Send Money](docs/screenshots/Send-Money.png) | ![Bank Dashboard](docs/screenshots/Bank-Dashboard.png) |
 
 ### Payment Protection
 
-![Payment Paused](docs/screenshots/Critical Scenario.png)
+![Payment Paused](docs/screenshots/Critical-Scenario.png)
 
 ### Fraud Network
 
