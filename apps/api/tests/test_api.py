@@ -208,7 +208,7 @@ def test_transaction_analyze_hold_scenario(client, db_session, monkeypatch):
     user, recipient, _ = _seed(db_session)
     
     # Mock recipient adapter to return score >= 60 to trigger the high-confidence rule
-    def mock_run_recipient_analysis(recipient_id, db):
+    def mock_run_recipient_analysis(recipient_id, db, **kwargs):
         return {
             "score": 65,
             "signals": ["SUSPICIOUS_HISTORY"],
@@ -261,6 +261,38 @@ def test_transaction_analyze_allow_scenario(client, db_session):
     tx_id = int(body["transaction_id"].replace("TX", ""))
     db_tx = db_session.query(Transaction).filter(Transaction.id == tx_id).first()
     assert db_tx.status == TransactionStatus.ALLOWED
+
+def test_recipient_adapter_filters_current_user(db_session):
+    from app.services.recipient.adapter import run_recipient_analysis
+    from app.models.domain import User, Recipient, Transaction
+    from datetime import datetime, timezone
+    
+    # Create test data
+    user1 = User()
+    user2 = User()
+    recipient = Recipient()
+    db_session.add_all([user1, user2, recipient])
+    db_session.commit()
+    db_session.refresh(user1)
+    db_session.refresh(user2)
+    db_session.refresh(recipient)
+    
+    from app.models.domain import TransactionStatus
+    tx1 = Transaction(user_id=user1.id, recipient_id=recipient.id, amount=100, currency="INR", status=TransactionStatus.ALLOWED, timestamp=datetime.now(timezone.utc))
+    tx2 = Transaction(user_id=user2.id, recipient_id=recipient.id, amount=200, currency="INR", status=TransactionStatus.ALLOWED, timestamp=datetime.now(timezone.utc))
+    db_session.add_all([tx1, tx2])
+    db_session.commit()
+    
+    # Run analysis without filtering (legacy behavior)
+    res_unfiltered = run_recipient_analysis(str(recipient.id), db_session)
+    assert res_unfiltered["recipient_profile"]["sender_count"] == 2
+    
+    # Run analysis filtering user1
+    res_filtered = run_recipient_analysis(str(recipient.id), db_session, current_user_id=str(user1.id))
+    assert res_filtered["recipient_profile"]["sender_count"] == 1
+    
+    # The actual network check depends on P3's engine stub in tests, but the adapter 
+    # data translation will correctly only pass the unfiltered tx dicts to it.
 
 def test_llm_fallback_behavior(client, db_session, monkeypatch):
     from app.services.intent.providers import LLMProvider

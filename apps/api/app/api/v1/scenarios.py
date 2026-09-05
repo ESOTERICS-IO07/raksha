@@ -72,12 +72,56 @@ def run_scenario(scenario_id: int, db: Session = Depends(get_db)) -> dict[str, A
             ).model_dump(),
         )
 
-    # TODO: Wire full pipeline when P4 is merged
+    # Deterministic Demo Scenarios Mapping
+    scenarios = {
+        1: {"user_id": "1001", "recipient_id": "2001", "amount": 1000, "reason": "Monthly grocery bill"},
+        2: {"user_id": "1002", "recipient_id": "2002", "amount": 150000, "reason": "Late night unusual transfer"},
+        3: {"user_id": "1003", "recipient_id": "2004", "amount": 5000, "reason": "First payment to this user"},
+        4: {"user_id": "1001", "recipient_id": "2020", "amount": 50000, "reason": "Bank officer told me to verify my account"},
+        5: {"user_id": "1005", "recipient_id": "2005", "amount": 25000, "reason": "Pay immediately or account suspended"},
+        6: {"user_id": "1006", "recipient_id": "2006", "amount": 300000, "reason": "Guaranteed high returns crypto"},
+        7: {"user_id": "1007", "recipient_id": "2007", "amount": 40000, "reason": "Refund overpayment send back"},
+        8: {"user_id": "1008", "recipient_id": "2020", "amount": 10000, "reason": "Sending money to friend"}
+    }
+
+    scenario_data = scenarios.get(scenario_id)
+    if not scenario_data:
+        from app.models.domain import User, Recipient
+        first_u = db.query(User).first()
+        first_r = db.query(Recipient).first()
+        u_id = str(first_u.id) if first_u else "1001"
+        r_id = str(first_r.id) if first_r else "2001"
+        scenario_data = {"user_id": u_id, "recipient_id": r_id, "amount": 100, "reason": "Test scenario fallback"}
+
+    from app.schemas.transaction import TransactionContext
+    from app.api.v1.transactions import analyze_transaction
+
+    payload = TransactionContext(
+        user_id=scenario_data["user_id"],
+        recipient_id=scenario_data["recipient_id"],
+        amount=scenario_data["amount"],
+        reason=scenario_data["reason"]
+    )
+
+    result = analyze_transaction(payload, db)
+
+    # Inject frontend display metadata missing from analyze_transaction
+    from datetime import datetime, timezone
+    result["amount"] = scenario_data["amount"]
+    result["reason"] = scenario_data["reason"]
+    result["timestamp"] = datetime.now(timezone.utc).isoformat()
+
+    # Map mock names
+    recipient_names = {
+        "2001": "FreshMart Grocery",
+        "2002": "Priya Sharma",
+        "2004": "Rahul Electronics",
+        "2020": "Unknown Recipient",
+    }
+    result["recipient_name"] = recipient_names.get(scenario_data["recipient_id"], f"Synthetic Recipient {scenario_data['recipient_id']}")
+
     return {
         "scenario_id": scenario_id,
-        "status": "PENDING_FULL_PIPELINE",
-        "result": {
-            "scenario_name": row.name,
-            "note": "Full intelligence pipeline will be wired after Person 4 integration.",
-        },
+        "status": "SUCCESS",
+        "result": result,
     }

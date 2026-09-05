@@ -66,16 +66,27 @@ def analyze_transaction(
     canonical schemas, and persists the transaction record and outputs.
     """
     # Validate that user and recipient exist
+    def parse_id(raw_id: str, prefix: str, offset: int) -> int:
+        try:
+            return int(raw_id)
+        except ValueError:
+            if isinstance(raw_id, str) and raw_id.upper().startswith(prefix.upper()):
+                try:
+                    return int(raw_id[1:]) + offset
+                except ValueError:
+                    pass
+            raise ValueError(f"Invalid ID format for {prefix}")
+
     try:
-        user_id_int = int(payload.user_id)
-        recipient_id_int = int(payload.recipient_id)
+        user_id_int = parse_id(payload.user_id, "U", 1000)
+        recipient_id_int = parse_id(payload.recipient_id, "R", 2000)
     except (ValueError, TypeError):
         raise HTTPException(
             status_code=422,
             detail=ErrorResponse(
                 error=ErrorDetail(
                     code="INVALID_ID_FORMAT",
-                    message="user_id and recipient_id must be numeric strings.",
+                    message="user_id and recipient_id must be numeric strings or start with U/R.",
                     request_id=str(uuid.uuid4()),
                 )
             ).model_dump(),
@@ -108,8 +119,12 @@ def analyze_transaction(
         )
 
     # 1. Run P2 Behavior and P3 Recipient (Existing)
+    # Convert IDs to internal numeric strings so P2/P3 adapters don't fail
+    payload.user_id = str(user_id_int)
+    payload.recipient_id = str(recipient_id_int)
+
     behavior_result = run_behavior_analysis(payload, db)
-    recipient_result = run_recipient_analysis(payload.recipient_id, db)
+    recipient_result = run_recipient_analysis(payload.recipient_id, db, current_user_id=payload.user_id)
 
     # 2. Run P4 Intent
     intent_svc = IntentService(provider=LLMProvider())

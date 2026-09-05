@@ -64,7 +64,10 @@ def _build_recipient_data(db_recipient: Any) -> dict[str, Any]:
         oldest_tx = min(db_recipient.transactions, key=lambda t: t.timestamp)
         # Ensure timestamp comparison works cleanly
         now = datetime.now(timezone.utc)
-        delta = now - oldest_tx.timestamp
+        oldest_ts = oldest_tx.timestamp
+        if oldest_ts.tzinfo is None:
+            oldest_ts = oldest_ts.replace(tzinfo=timezone.utc)
+        delta = now - oldest_ts
         account_age_days = max(0, delta.days)
 
     return {
@@ -77,6 +80,7 @@ def _build_recipient_data(db_recipient: Any) -> dict[str, Any]:
 def run_recipient_analysis(
     recipient_id: str,
     db: "Session",
+    current_user_id: Optional[str] = None,
 ) -> dict[str, Any]:
     """Run the Recipient Engine for a given recipient_id.
 
@@ -109,23 +113,38 @@ def run_recipient_analysis(
             model_version="recipient-v1",
         ).model_dump()
 
+    # Filter out the current user's transactions to prevent demo pollution
+    # from artificially inflating the suspicious network count.
+    filtered_txs = []
+    if db_recipient.transactions:
+        if current_user_id:
+            try:
+                curr_uid = int(current_user_id)
+                filtered_txs = [tx for tx in db_recipient.transactions if tx.user_id != curr_uid]
+            except ValueError:
+                filtered_txs = list(db_recipient.transactions)
+        else:
+            filtered_txs = list(db_recipient.transactions)
+
     # Build flagged tx set from fraud_flags table (relational, not a column)
-    all_tx_ids = [tx.id for tx in db_recipient.transactions] if db_recipient.transactions else []
+    all_tx_ids = [tx.id for tx in filtered_txs] if filtered_txs else []
     flagged_tx_ids: set[int] = set()
     if all_tx_ids:
         flags = db.query(FraudFlag).filter(FraudFlag.recipient_id == r_id_int).all()
-        # TODO(Integration): The FraudFlag model currently lacks transaction_level identification.
-        # As the smallest safe fallback, we flag all transactions for a flagged recipient.
-        # This accurately captures suspicious networks for deterministic fraud recipients
-        # but may broaden suspicion incorrectly for mixed-history recipients.
-        # Future schema update is required to map FraudFlag directly to Transaction.
         if flags:
             flagged_tx_ids = set(all_tx_ids)
 
     tx_dicts = _build_transaction_dicts(
-        db_recipient.transactions or [], flagged_tx_ids
+        filtered_txs, flagged_tx_ids
     )
-    recipient_data = _build_recipient_data(db_recipient)
+    
+    # We also need to mock a recipient for the adapter build function 
+    # to accurately recount the filtered sender_count
+    class MockRecipient:
+        transactions = filtered_txs
+        fraud_flags = db_recipient.fraud_flags
+
+    recipient_data = _build_recipient_data(MockRecipient())
 
     try:
         from app.services.recipient.recipient_engine import analyze_recipient_from_data  # type: ignore

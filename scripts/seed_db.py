@@ -60,6 +60,24 @@ def seed_db():
                     status=status_enum
                 ))
                 txs_added += 1
+        # 5. Scenarios
+        scenarios_added = 0
+        scenario_data = [
+            {"id": 1, "name": "NORMAL_PAYMENT", "description": "Standard recurring payment to a known contact."},
+            {"id": 2, "name": "UNUSUAL_PAYMENT", "description": "Payment outside typical hours or amounts."},
+            {"id": 3, "name": "NEW_RECIPIENT", "description": "First-time transfer to a new account."},
+            {"id": 4, "name": "BANK_IMPERSONATION", "description": "User coerced by a fake bank officer."},
+            {"id": 5, "name": "ACCOUNT_SUSPENSION", "description": "Scam claiming account will be frozen."},
+            {"id": 6, "name": "INVESTMENT_SCAM", "description": "High-pressure crypto or stock scheme."},
+            {"id": 7, "name": "REFUND_SCAM", "description": "Fake tech support refund overpayment."},
+            {"id": 8, "name": "FRAUD_NETWORK", "description": "Recipient is connected to known fraud rings."}
+        ]
+
+        from app.models.domain import ScenarioDefinition
+        for sd in scenario_data:
+            if not db.query(ScenarioDefinition).filter(ScenarioDefinition.id == sd["id"]).first():
+                db.add(ScenarioDefinition(id=sd["id"], name=sd["name"], description=sd["description"]))
+                scenarios_added += 1
         db.commit()
 
         logger.info("Seed successful!")
@@ -67,7 +85,8 @@ def seed_db():
         logger.info(f"Recipients added: {recipients_added}")
         logger.info(f"Fraud Flags added: {flags_added}")
         logger.info(f"Transactions added: {txs_added}")
-        
+        logger.info(f"Scenarios added: {scenarios_added}")
+
     except Exception as e:
         db.rollback()
         logger.error(f"Seeding failed: {e}")

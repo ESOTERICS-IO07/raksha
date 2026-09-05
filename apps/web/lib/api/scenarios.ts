@@ -9,5 +9,6 @@ export async function runScenario(id: string) {
     method: "POST"
   });
   if (!res.ok) throw new Error("Failed to run scenario");
-  return res.json();
+  const data = await res.json();
+  return data.result || data;
 }
