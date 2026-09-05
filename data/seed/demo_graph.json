@@ -1,0 +1,2446 @@
+{
+  "users": [
+    {
+      "id": 1001,
+      "semantic_name": "SYNTHETIC_USER_001"
+    },
+    {
+      "id": 1002,
+      "semantic_name": "SYNTHETIC_USER_002"
+    },
+    {
+      "id": 1003,
+      "semantic_name": "SYNTHETIC_USER_003"
+    },
+    {
+      "id": 1004,
+      "semantic_name": "SYNTHETIC_USER_004"
+    },
+    {
+      "id": 1005,
+      "semantic_name": "SYNTHETIC_USER_005"
+    },
+    {
+      "id": 1006,
+      "semantic_name": "SYNTHETIC_USER_006"
+    },
+    {
+      "id": 1007,
+      "semantic_name": "SYNTHETIC_USER_007"
+    },
+    {
+      "id": 1008,
+      "semantic_name": "SYNTHETIC_USER_008"
+    },
+    {
+      "id": 1009,
+      "semantic_name": "SYNTHETIC_USER_009"
+    },
+    {
+      "id": 1010,
+      "semantic_name": "SYNTHETIC_USER_010"
+    },
+    {
+      "id": 1011,
+      "semantic_name": "SYNTHETIC_USER_011"
+    },
+    {
+      "id": 1012,
+      "semantic_name": "SYNTHETIC_USER_012"
+    },
+    {
+      "id": 1013,
+      "semantic_name": "SYNTHETIC_USER_013"
+    },
+    {
+      "id": 1014,
+      "semantic_name": "SYNTHETIC_USER_014"
+    }
+  ],
+  "recipients": [
+    {
+      "id": 2001,
+      "semantic_name": "SYNTHETIC_RECIPIENT_001"
+    },
+    {
+      "id": 2002,
+      "semantic_name": "SYNTHETIC_RECIPIENT_002"
+    },
+    {
+      "id": 2003,
+      "semantic_name": "SYNTHETIC_RECIPIENT_003"
+    },
+    {
+      "id": 2004,
+      "semantic_name": "SYNTHETIC_RECIPIENT_004"
+    },
+    {
+      "id": 2005,
+      "semantic_name": "SYNTHETIC_RECIPIENT_005"
+    },
+    {
+      "id": 2006,
+      "semantic_name": "SYNTHETIC_RECIPIENT_006"
+    },
+    {
+      "id": 2007,
+      "semantic_name": "SYNTHETIC_RECIPIENT_007"
+    },
+    {
+      "id": 2008,
+      "semantic_name": "SYNTHETIC_RECIPIENT_008"
+    },
+    {
+      "id": 2009,
+      "semantic_name": "SYNTHETIC_RECIPIENT_009"
+    },
+    {
+      "id": 2010,
+      "semantic_name": "SYNTHETIC_RECIPIENT_010"
+    },
+    {
+      "id": 2011,
+      "semantic_name": "SYNTHETIC_RECIPIENT_011"
+    },
+    {
+      "id": 2012,
+      "semantic_name": "SYNTHETIC_RECIPIENT_012"
+    },
+    {
+      "id": 2013,
+      "semantic_name": "SYNTHETIC_RECIPIENT_013"
+    },
+    {
+      "id": 2014,
+      "semantic_name": "SYNTHETIC_RECIPIENT_014"
+    },
+    {
+      "id": 2015,
+      "semantic_name": "SYNTHETIC_RECIPIENT_015"
+    },
+    {
+      "id": 2016,
+      "semantic_name": "SYNTHETIC_RECIPIENT_016"
+    },
+    {
+      "id": 2017,
+      "semantic_name": "SYNTHETIC_RECIPIENT_017"
+    },
+    {
+      "id": 2018,
+      "semantic_name": "SYNTHETIC_RECIPIENT_018"
+    },
+    {
+      "id": 2019,
+      "semantic_name": "SYNTHETIC_RECIPIENT_019"
+    },
+    {
+      "id": 2020,
+      "semantic_name": "SYNTHETIC_RECIPIENT_020"
+    },
+    {
+      "id": 2021,
+      "semantic_name": "SYNTHETIC_RECIPIENT_021"
+    },
+    {
+      "id": 2022,
+      "semantic_name": "SYNTHETIC_RECIPIENT_022"
+    },
+    {
+      "id": 2023,
+      "semantic_name": "SYNTHETIC_RECIPIENT_023"
+    },
+    {
+      "id": 2024,
+      "semantic_name": "SYNTHETIC_RECIPIENT_024"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 50000,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 144.53,
+      "currency": "INR",
+      "timestamp": "2026-03-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50001,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 197.96,
+      "currency": "INR",
+      "timestamp": "2026-06-24T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50002,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 394.59,
+      "currency": "INR",
+      "timestamp": "2026-07-29T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50003,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 396.27,
+      "currency": "INR",
+      "timestamp": "2026-03-13T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50004,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 134.78,
+      "currency": "INR",
+      "timestamp": "2026-04-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50005,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 112.71,
+      "currency": "INR",
+      "timestamp": "2026-05-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50006,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 187.46,
+      "currency": "INR",
+      "timestamp": "2026-08-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50007,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 340.81,
+      "currency": "INR",
+      "timestamp": "2026-04-26T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50008,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 179.54,
+      "currency": "INR",
+      "timestamp": "2026-04-12T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50009,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 380.53,
+      "currency": "INR",
+      "timestamp": "2026-03-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50010,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 188.18,
+      "currency": "INR",
+      "timestamp": "2026-05-18T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50011,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 211.28,
+      "currency": "INR",
+      "timestamp": "2026-04-05T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50012,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 403.52,
+      "currency": "INR",
+      "timestamp": "2026-09-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50013,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 379.26,
+      "currency": "INR",
+      "timestamp": "2026-07-24T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50014,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 211.15,
+      "currency": "INR",
+      "timestamp": "2026-06-07T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50015,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 482.89,
+      "currency": "INR",
+      "timestamp": "2026-07-09T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50016,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 140.88,
+      "currency": "INR",
+      "timestamp": "2026-06-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50017,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 138.69,
+      "currency": "INR",
+      "timestamp": "2026-05-28T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50018,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 341.49,
+      "currency": "INR",
+      "timestamp": "2026-06-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50019,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 391.89,
+      "currency": "INR",
+      "timestamp": "2026-08-22T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50020,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 149.93,
+      "currency": "INR",
+      "timestamp": "2026-04-18T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50021,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 131.52,
+      "currency": "INR",
+      "timestamp": "2026-05-29T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50022,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 431.76,
+      "currency": "INR",
+      "timestamp": "2026-06-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50023,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 454.18,
+      "currency": "INR",
+      "timestamp": "2026-03-28T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50024,
+      "user_id": 1001,
+      "recipient_id": 2001,
+      "amount": 330.94,
+      "currency": "INR",
+      "timestamp": "2026-06-02T19:41:52.832767+00:00",
+      "device_id": "DEV_1001",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50025,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 118.33,
+      "currency": "INR",
+      "timestamp": "2026-08-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50026,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 409.23,
+      "currency": "INR",
+      "timestamp": "2026-07-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50027,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 442.13,
+      "currency": "INR",
+      "timestamp": "2026-08-13T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50028,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 252.05,
+      "currency": "INR",
+      "timestamp": "2026-08-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50029,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 354.27,
+      "currency": "INR",
+      "timestamp": "2026-05-09T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50030,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 165.06,
+      "currency": "INR",
+      "timestamp": "2026-06-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50031,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 183.8,
+      "currency": "INR",
+      "timestamp": "2026-06-04T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50032,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 380.73,
+      "currency": "INR",
+      "timestamp": "2026-06-26T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50033,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 359.21,
+      "currency": "INR",
+      "timestamp": "2026-03-12T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50034,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 353.99,
+      "currency": "INR",
+      "timestamp": "2026-03-31T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50035,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 391.65,
+      "currency": "INR",
+      "timestamp": "2026-04-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50036,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 284.9,
+      "currency": "INR",
+      "timestamp": "2026-07-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50037,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 495.81,
+      "currency": "INR",
+      "timestamp": "2026-06-25T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50038,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 375.26,
+      "currency": "INR",
+      "timestamp": "2026-03-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50039,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 373.85,
+      "currency": "INR",
+      "timestamp": "2026-07-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50040,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 191.62,
+      "currency": "INR",
+      "timestamp": "2026-08-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50041,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 422.02,
+      "currency": "INR",
+      "timestamp": "2026-08-25T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50042,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 207.1,
+      "currency": "INR",
+      "timestamp": "2026-05-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50043,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 465.25,
+      "currency": "INR",
+      "timestamp": "2026-07-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50044,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 450.55,
+      "currency": "INR",
+      "timestamp": "2026-04-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50045,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 185.05,
+      "currency": "INR",
+      "timestamp": "2026-06-14T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50046,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 258.25,
+      "currency": "INR",
+      "timestamp": "2026-04-28T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50047,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 283.54,
+      "currency": "INR",
+      "timestamp": "2026-03-22T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50048,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 155.85,
+      "currency": "INR",
+      "timestamp": "2026-06-27T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50049,
+      "user_id": 1002,
+      "recipient_id": 2002,
+      "amount": 315.59,
+      "currency": "INR",
+      "timestamp": "2026-04-12T19:41:52.832767+00:00",
+      "device_id": "DEV_1002",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50050,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 271.37,
+      "currency": "INR",
+      "timestamp": "2026-04-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50051,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 259.76,
+      "currency": "INR",
+      "timestamp": "2026-04-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50052,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 498.93,
+      "currency": "INR",
+      "timestamp": "2026-07-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50053,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 303.81,
+      "currency": "INR",
+      "timestamp": "2026-07-29T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50054,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 402.31,
+      "currency": "INR",
+      "timestamp": "2026-08-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50055,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 161.14,
+      "currency": "INR",
+      "timestamp": "2026-08-05T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50056,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 416.83,
+      "currency": "INR",
+      "timestamp": "2026-07-24T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50057,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 338.56,
+      "currency": "INR",
+      "timestamp": "2026-05-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50058,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 252.65,
+      "currency": "INR",
+      "timestamp": "2026-05-27T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50059,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 311.65,
+      "currency": "INR",
+      "timestamp": "2026-05-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50060,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 444.31,
+      "currency": "INR",
+      "timestamp": "2026-04-14T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50061,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 372.11,
+      "currency": "INR",
+      "timestamp": "2026-08-31T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50062,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 372.68,
+      "currency": "INR",
+      "timestamp": "2026-08-04T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50063,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 400.35,
+      "currency": "INR",
+      "timestamp": "2026-04-18T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50064,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 236.07,
+      "currency": "INR",
+      "timestamp": "2026-03-22T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50065,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 273.91,
+      "currency": "INR",
+      "timestamp": "2026-06-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50066,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 101.3,
+      "currency": "INR",
+      "timestamp": "2026-05-09T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50067,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 488.76,
+      "currency": "INR",
+      "timestamp": "2026-06-27T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50068,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 303.07,
+      "currency": "INR",
+      "timestamp": "2026-07-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50069,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 448.21,
+      "currency": "INR",
+      "timestamp": "2026-08-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50070,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 436.67,
+      "currency": "INR",
+      "timestamp": "2026-06-18T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50071,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 343.59,
+      "currency": "INR",
+      "timestamp": "2026-04-26T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50072,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 249.57,
+      "currency": "INR",
+      "timestamp": "2026-07-25T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50073,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 315.75,
+      "currency": "INR",
+      "timestamp": "2026-07-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50074,
+      "user_id": 1003,
+      "recipient_id": 2003,
+      "amount": 467.4,
+      "currency": "INR",
+      "timestamp": "2026-04-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1003",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50075,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 229.66,
+      "currency": "INR",
+      "timestamp": "2026-04-02T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50076,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 144.75,
+      "currency": "INR",
+      "timestamp": "2026-08-29T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50077,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 451.49,
+      "currency": "INR",
+      "timestamp": "2026-06-02T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50078,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 195.78,
+      "currency": "INR",
+      "timestamp": "2026-06-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50079,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 451.2,
+      "currency": "INR",
+      "timestamp": "2026-07-03T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50080,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 134.26,
+      "currency": "INR",
+      "timestamp": "2026-08-13T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50081,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 426.41,
+      "currency": "INR",
+      "timestamp": "2026-05-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50082,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 406.33,
+      "currency": "INR",
+      "timestamp": "2026-04-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50083,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 363.9,
+      "currency": "INR",
+      "timestamp": "2026-08-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50084,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 166.05,
+      "currency": "INR",
+      "timestamp": "2026-04-15T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50085,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 448.97,
+      "currency": "INR",
+      "timestamp": "2026-04-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50086,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 485.75,
+      "currency": "INR",
+      "timestamp": "2026-05-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50087,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 402.11,
+      "currency": "INR",
+      "timestamp": "2026-04-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50088,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 180.46,
+      "currency": "INR",
+      "timestamp": "2026-03-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50089,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 259.6,
+      "currency": "INR",
+      "timestamp": "2026-06-15T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50090,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 359.95,
+      "currency": "INR",
+      "timestamp": "2026-03-15T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50091,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 459.85,
+      "currency": "INR",
+      "timestamp": "2026-05-13T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50092,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 148.4,
+      "currency": "INR",
+      "timestamp": "2026-05-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50093,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 125.61,
+      "currency": "INR",
+      "timestamp": "2026-07-07T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50094,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 335.32,
+      "currency": "INR",
+      "timestamp": "2026-08-28T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50095,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 335.38,
+      "currency": "INR",
+      "timestamp": "2026-07-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50096,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 128.4,
+      "currency": "INR",
+      "timestamp": "2026-09-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50097,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 123.55,
+      "currency": "INR",
+      "timestamp": "2026-03-25T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50098,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 462.17,
+      "currency": "INR",
+      "timestamp": "2026-08-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50099,
+      "user_id": 1004,
+      "recipient_id": 2004,
+      "amount": 128.34,
+      "currency": "INR",
+      "timestamp": "2026-06-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1004",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50100,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 211.39,
+      "currency": "INR",
+      "timestamp": "2026-07-04T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50101,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 185.69,
+      "currency": "INR",
+      "timestamp": "2026-05-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50102,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 389.34,
+      "currency": "INR",
+      "timestamp": "2026-07-31T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50103,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 330.48,
+      "currency": "INR",
+      "timestamp": "2026-04-09T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50104,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 413.85,
+      "currency": "INR",
+      "timestamp": "2026-07-02T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50105,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 176.16,
+      "currency": "INR",
+      "timestamp": "2026-05-21T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50106,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 363.59,
+      "currency": "INR",
+      "timestamp": "2026-08-09T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50107,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 269.43,
+      "currency": "INR",
+      "timestamp": "2026-06-04T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50108,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 445.53,
+      "currency": "INR",
+      "timestamp": "2026-05-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50109,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 369.35,
+      "currency": "INR",
+      "timestamp": "2026-08-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50110,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 139.37,
+      "currency": "INR",
+      "timestamp": "2026-03-21T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50111,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 391.29,
+      "currency": "INR",
+      "timestamp": "2026-05-22T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50112,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 199.46,
+      "currency": "INR",
+      "timestamp": "2026-08-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50113,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 314.51,
+      "currency": "INR",
+      "timestamp": "2026-07-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50114,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 268.75,
+      "currency": "INR",
+      "timestamp": "2026-07-29T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50115,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 285.05,
+      "currency": "INR",
+      "timestamp": "2026-06-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50116,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 277.25,
+      "currency": "INR",
+      "timestamp": "2026-08-14T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50117,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 139.16,
+      "currency": "INR",
+      "timestamp": "2026-04-15T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50118,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 499.71,
+      "currency": "INR",
+      "timestamp": "2026-03-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50119,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 487.6,
+      "currency": "INR",
+      "timestamp": "2026-08-30T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50120,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 166.52,
+      "currency": "INR",
+      "timestamp": "2026-07-04T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50121,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 292.54,
+      "currency": "INR",
+      "timestamp": "2026-05-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50122,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 460.98,
+      "currency": "INR",
+      "timestamp": "2026-05-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50123,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 251.59,
+      "currency": "INR",
+      "timestamp": "2026-07-22T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50124,
+      "user_id": 1005,
+      "recipient_id": 2005,
+      "amount": 206.08,
+      "currency": "INR",
+      "timestamp": "2026-05-26T19:41:52.832767+00:00",
+      "device_id": "DEV_1005",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50125,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 214.1,
+      "currency": "INR",
+      "timestamp": "2026-05-09T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50126,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 482.93,
+      "currency": "INR",
+      "timestamp": "2026-03-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50127,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 364.75,
+      "currency": "INR",
+      "timestamp": "2026-04-13T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50128,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 161.92,
+      "currency": "INR",
+      "timestamp": "2026-05-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50129,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 187.08,
+      "currency": "INR",
+      "timestamp": "2026-06-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50130,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 331.67,
+      "currency": "INR",
+      "timestamp": "2026-08-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50131,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 124.38,
+      "currency": "INR",
+      "timestamp": "2026-04-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50132,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 122.87,
+      "currency": "INR",
+      "timestamp": "2026-06-14T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50133,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 290.72,
+      "currency": "INR",
+      "timestamp": "2026-04-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50134,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 162.97,
+      "currency": "INR",
+      "timestamp": "2026-04-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50135,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 132.04,
+      "currency": "INR",
+      "timestamp": "2026-04-25T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50136,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 127.41,
+      "currency": "INR",
+      "timestamp": "2026-07-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50137,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 370.09,
+      "currency": "INR",
+      "timestamp": "2026-08-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50138,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 261.51,
+      "currency": "INR",
+      "timestamp": "2026-07-04T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50139,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 198.49,
+      "currency": "INR",
+      "timestamp": "2026-04-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50140,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 115.9,
+      "currency": "INR",
+      "timestamp": "2026-04-03T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50141,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 267.69,
+      "currency": "INR",
+      "timestamp": "2026-08-13T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50142,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 326.09,
+      "currency": "INR",
+      "timestamp": "2026-04-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50143,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 473.88,
+      "currency": "INR",
+      "timestamp": "2026-06-14T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50144,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 367.89,
+      "currency": "INR",
+      "timestamp": "2026-07-12T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50145,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 195.47,
+      "currency": "INR",
+      "timestamp": "2026-06-14T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50146,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 152.35,
+      "currency": "INR",
+      "timestamp": "2026-05-24T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50147,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 220.0,
+      "currency": "INR",
+      "timestamp": "2026-03-21T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50148,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 471.61,
+      "currency": "INR",
+      "timestamp": "2026-06-14T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50149,
+      "user_id": 1006,
+      "recipient_id": 2006,
+      "amount": 103.73,
+      "currency": "INR",
+      "timestamp": "2026-08-15T19:41:52.832767+00:00",
+      "device_id": "DEV_1006",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50150,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 499.38,
+      "currency": "INR",
+      "timestamp": "2026-03-27T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50151,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 129.3,
+      "currency": "INR",
+      "timestamp": "2026-08-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50152,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 302.35,
+      "currency": "INR",
+      "timestamp": "2026-07-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50153,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 473.3,
+      "currency": "INR",
+      "timestamp": "2026-07-31T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50154,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 451.71,
+      "currency": "INR",
+      "timestamp": "2026-08-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50155,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 213.99,
+      "currency": "INR",
+      "timestamp": "2026-05-31T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50156,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 433.5,
+      "currency": "INR",
+      "timestamp": "2026-05-13T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50157,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 344.67,
+      "currency": "INR",
+      "timestamp": "2026-06-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50158,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 311.58,
+      "currency": "INR",
+      "timestamp": "2026-03-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50159,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 426.84,
+      "currency": "INR",
+      "timestamp": "2026-03-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50160,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 472.7,
+      "currency": "INR",
+      "timestamp": "2026-06-18T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50161,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 475.57,
+      "currency": "INR",
+      "timestamp": "2026-08-07T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50162,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 205.79,
+      "currency": "INR",
+      "timestamp": "2026-07-30T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50163,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 396.97,
+      "currency": "INR",
+      "timestamp": "2026-08-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50164,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 208.94,
+      "currency": "INR",
+      "timestamp": "2026-07-25T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50165,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 184.25,
+      "currency": "INR",
+      "timestamp": "2026-04-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50166,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 181.44,
+      "currency": "INR",
+      "timestamp": "2026-06-07T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50167,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 441.17,
+      "currency": "INR",
+      "timestamp": "2026-03-24T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50168,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 295.41,
+      "currency": "INR",
+      "timestamp": "2026-04-26T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50169,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 136.92,
+      "currency": "INR",
+      "timestamp": "2026-08-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50170,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 431.74,
+      "currency": "INR",
+      "timestamp": "2026-05-17T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50171,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 101.42,
+      "currency": "INR",
+      "timestamp": "2026-08-22T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50172,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 354.85,
+      "currency": "INR",
+      "timestamp": "2026-07-31T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50173,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 164.63,
+      "currency": "INR",
+      "timestamp": "2026-06-27T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50174,
+      "user_id": 1007,
+      "recipient_id": 2007,
+      "amount": 320.67,
+      "currency": "INR",
+      "timestamp": "2026-05-12T19:41:52.832767+00:00",
+      "device_id": "DEV_1007",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50175,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 324.36,
+      "currency": "INR",
+      "timestamp": "2026-05-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50176,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 130.1,
+      "currency": "INR",
+      "timestamp": "2026-08-05T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50177,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 461.57,
+      "currency": "INR",
+      "timestamp": "2026-03-10T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50178,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 114.41,
+      "currency": "INR",
+      "timestamp": "2026-04-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50179,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 333.0,
+      "currency": "INR",
+      "timestamp": "2026-05-31T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50180,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 271.91,
+      "currency": "INR",
+      "timestamp": "2026-07-27T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50181,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 223.3,
+      "currency": "INR",
+      "timestamp": "2026-08-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50182,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 459.57,
+      "currency": "INR",
+      "timestamp": "2026-08-23T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50183,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 372.83,
+      "currency": "INR",
+      "timestamp": "2026-07-11T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50184,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 141.12,
+      "currency": "INR",
+      "timestamp": "2026-03-16T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50185,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 453.65,
+      "currency": "INR",
+      "timestamp": "2026-04-12T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50186,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 489.53,
+      "currency": "INR",
+      "timestamp": "2026-05-21T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50187,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 470.31,
+      "currency": "INR",
+      "timestamp": "2026-07-25T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50188,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 445.84,
+      "currency": "INR",
+      "timestamp": "2026-07-04T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50189,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 452.57,
+      "currency": "INR",
+      "timestamp": "2026-07-19T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50190,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 171.74,
+      "currency": "INR",
+      "timestamp": "2026-08-27T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50191,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 412.95,
+      "currency": "INR",
+      "timestamp": "2026-06-09T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50192,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 420.89,
+      "currency": "INR",
+      "timestamp": "2026-05-20T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50193,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 206.72,
+      "currency": "INR",
+      "timestamp": "2026-07-01T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50194,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 143.24,
+      "currency": "INR",
+      "timestamp": "2026-03-07T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50195,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 443.44,
+      "currency": "INR",
+      "timestamp": "2026-08-24T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50196,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 179.83,
+      "currency": "INR",
+      "timestamp": "2026-07-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50197,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 239.86,
+      "currency": "INR",
+      "timestamp": "2026-05-08T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50198,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 189.17,
+      "currency": "INR",
+      "timestamp": "2026-07-06T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50199,
+      "user_id": 1008,
+      "recipient_id": 2008,
+      "amount": 177.25,
+      "currency": "INR",
+      "timestamp": "2026-03-18T19:41:52.832767+00:00",
+      "device_id": "DEV_1008",
+      "reason": "grocery",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50200,
+      "user_id": 1011,
+      "recipient_id": 2020,
+      "amount": 50000,
+      "currency": "INR",
+      "timestamp": "2026-09-03T18:41:52.832767+00:00",
+      "device_id": "DEV_1011",
+      "reason": "urgent transfer",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50201,
+      "user_id": 1012,
+      "recipient_id": 2020,
+      "amount": 30000,
+      "currency": "INR",
+      "timestamp": "2026-09-03T18:41:52.832767+00:00",
+      "device_id": "DEV_1012",
+      "reason": "urgent transfer",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50202,
+      "user_id": 1013,
+      "recipient_id": 2020,
+      "amount": 70000,
+      "currency": "INR",
+      "timestamp": "2026-09-03T18:41:52.832767+00:00",
+      "device_id": "DEV_1013",
+      "reason": "urgent transfer",
+      "status": "ALLOWED"
+    },
+    {
+      "id": 50203,
+      "user_id": 1014,
+      "recipient_id": 2020,
+      "amount": 15000,
+      "currency": "INR",
+      "timestamp": "2026-09-03T18:41:52.832767+00:00",
+      "device_id": "DEV_1014",
+      "reason": "urgent transfer",
+      "status": "ALLOWED"
+    }
+  ],
+  "fraud_flags": [
+    {
+      "id": 8000,
+      "recipient_id": 2020
+    },
+    {
+      "id": 8001,
+      "recipient_id": 2020
+    },
+    {
+      "id": 8002,
+      "recipient_id": 2020
+    }
+  ],
+  "scenarios": [
+    {
+      "id": 9001,
+      "name": "BANK_IMPERSONATION",
+      "description": "Simulates a bank impersonation call with high urgency.",
+      "payload": {
+        "user_id": 1001,
+        "recipient_id": 2020,
+        "amount": 45000,
+        "currency": "INR",
+        "reason": "A bank officer told me to transfer this immediately or my account will be blocked.",
+        "device_id": "DEV_1001"
+      }
+    },
+    {
+      "id": 9002,
+      "name": "NORMAL_PAYMENT",
+      "description": "Routine payment to an existing trusted recipient.",
+      "payload": {
+        "user_id": 1002,
+        "recipient_id": 2002,
+        "amount": 250,
+        "currency": "INR",
+        "reason": "lunch",
+        "device_id": "DEV_1002"
+      }
+    }
+  ]
+}
