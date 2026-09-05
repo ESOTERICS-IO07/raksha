@@ -5,6 +5,21 @@
 > **RAKSHA doesn't just detect fraudulent transactions. It detects when a legitimate customer is being manipulated into making one.**
 
 ---
+## Product Showcase
+
+RAKSHA connects the customer experience with the bank investigation workflow.
+
+| Customer Safety | Bank Investigation |
+|---|---|
+| ![Send Money](docs/screenshots/Send Money.png) | ![Bank Dashboard](docs/screenshots/Bank Dashboard.png) |
+
+### Payment Protection
+
+![Payment Paused](docs/screenshots/Critical Scenario.png)
+
+### Fraud Network
+
+![Fraud Graph](docs/screenshots/FraudGraph.png)
 
 ## 1. Problem
 
